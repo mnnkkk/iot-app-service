@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>app-service-configurable</h1>
+    <p> {{ slug }} </p>
   </div>
 </template>
 
@@ -12,7 +13,10 @@ export default {
 
   },
   props: {
-
+    slug: {
+      type: String,
+      required: true
+    }
   },
   // data () {
   //

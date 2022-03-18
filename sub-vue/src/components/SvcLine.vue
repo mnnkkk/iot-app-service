@@ -7,7 +7,7 @@
     <div>
       {{ Port }}
     </div>
-    <router-link to='app-service-configurable'>
+    <router-link :to='appSvcLink'>
       Configurable
     </router-link>
   </div>
@@ -21,7 +21,14 @@ export default {
     Port: Number
   },
   computed: {
-
+    appSvcLink () {
+      return {
+        name: 'app-service-configurable',
+        params: {
+          slug: this.ServiceId
+        }
+      }
+    }
   }
 }
 </script>
