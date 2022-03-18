@@ -9,6 +9,7 @@
     "start": "npm run serve"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.21.2",
     "common": "file:../common",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",

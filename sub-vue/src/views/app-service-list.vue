@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <h1>app-service-list</h1>
     <svc-line
       v-for="appSvc in appServiceList"
