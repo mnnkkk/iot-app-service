@@ -24,7 +24,7 @@ export const MockSvcLists = [{ ServiceId: 'core-command', Host: 'edgex-core-comm
   Port: 59881
 }, { ServiceId: 'device-rest', Host: 'edgex-device-rest', Port: 59986 }]
 
-export const a = {
+export const MockAppSvcConfig = {
   Clients: {
     'core-command': { Host: 'edgex-core-command', Port: '59882', Protocol: 'http' },
     'core-data': { Host: 'edgex-core-data', Port: '59880', Protocol: 'http' },
