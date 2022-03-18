@@ -1,28 +1,23 @@
 <template>
   <div>
     <h1>app-service-list</h1>
-    <li v-for="appSvc in this.appServiceList"
-        :key="appSvc.ServiceId">
-      <div>
-        {{ appSvc.ServiceId }}
-      </div>
-      <div>
-        {{ appSvc.Port }}
-      </div>
-      <router-link to='app-service-configurable'>
-        Configurable
-      </router-link>
-    </li>
+    <svc-line
+      v-for="appSvc in appServiceList"
+      :ServiceId = appSvc.ServiceId
+      :Port = appSvc.Port
+      :key = appSvc.ServiceId
+    />
   </div>
 </template>
 
 <script>
 import { svcService } from '../common/api.service'
+import SvcLine from '../components/SvcLine'
 
 export default {
   name: 'app-service-list',
   components: {
-
+    SvcLine
   },
   props: {
 
