@@ -9,6 +9,9 @@
       <div>
         {{ appSvc.Port }}
       </div>
+      <router-link to='app-service-configurable'>
+        Configurable
+      </router-link>
     </li>
   </div>
 </template>
