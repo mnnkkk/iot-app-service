@@ -1,4 +1,4 @@
-import { MockSvcLists } from './MockData'
+import { MockAppSvcConfig, MockSvcLists } from './MockData'
 
 const ApiService = {
   init () {
@@ -31,5 +31,11 @@ export default ApiService
 export const svcService = {
   get () {
     return MockSvcLists
+  }
+}
+
+export const appServiceService = {
+  getAppSvcConfigBySvcKey (svcKey) {
+    return MockAppSvcConfig
   }
 }

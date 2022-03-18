@@ -3,7 +3,7 @@
     <div>
       <p> {{ slug }} </p>
       <p> Configurable Setting </p>
-      <button>
+      <button @click="submit()">
         Submit
       </button>
     </div>
@@ -24,6 +24,7 @@
     <div>
       <div v-if="this.configurableSection === 'Trigger'">
         <p> Trigger </p>
+        <Trigger :TriggerData.sync="appSvcConfig.Trigger"/>
       </div>
       <div v-if="this.configurableSection === 'PipelineFunc'">
         <p> PipelineFunc </p>
@@ -39,11 +40,13 @@
 </template>
 
 <script>
+import { appServiceService } from '../common/api.service'
+import Trigger from '../components/Trigger'
 
 export default {
   name: 'app-service-configurable',
   components: {
-
+    Trigger
   },
   props: {
     slug: {
@@ -53,7 +56,8 @@ export default {
   },
   data () {
     return {
-      configurableSection: String
+      configurableSection: String,
+      appSvcConfig: Object
     }
   },
   computed: {
@@ -63,11 +67,14 @@ export default {
 
   },
   mounted () {
-
+    this.appSvcConfig = appServiceService.getAppSvcConfigBySvcKey(this.slug)
   },
   methods: {
     setConfigurableSection (configSection) {
       this.configurableSection = configSection
+    },
+    submit () {
+      console.log(this.appSvcConfig.Trigger.EdgexMessageBus.Optional.KeepAlive)
     }
   }
 }
