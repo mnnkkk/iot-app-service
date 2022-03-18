@@ -14,9 +14,9 @@ export default {
   props: {
 
   },
-  data () {
-
-  },
+  // data () {
+  //
+  // },
   computed: {
 
   },
