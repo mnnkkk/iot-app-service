@@ -33,6 +33,9 @@
           <div v-if="this.configurableSection === 'Trigger'">
             <Trigger :TriggerData.sync="appSvcConfig.Trigger"/>
           </div>
+          <div v-if="this.configurableSection === 'InsecureSecrets'">
+            <InsecureSecrets :InsecureSecretsData.sync="appSvcConfig.Writable.InsecureSecrets"/>
+          </div>
         </div>
       </div>
     </div>
@@ -42,11 +45,13 @@
 <script>
 import { appServiceService } from '../common/api.service'
 import Trigger from '../components/Trigger'
+import InsecureSecrets from '../components/InsecureSecrets'
 
 export default {
   name: 'app-service-configurable',
   components: {
-    Trigger
+    Trigger,
+    InsecureSecrets
   },
   props: {
     slug: {
@@ -77,6 +82,7 @@ export default {
     submit () {
       console.log(this.appSvcConfig.Trigger.EdgexMessageBus.Optional.KeepAlive)
       console.log(this.appSvcConfig.Trigger.Type)
+      console.log(this.appSvcConfig.Writable.InsecureSecrets.AES.Path)
     }
   }
 }
