@@ -2,13 +2,13 @@
   <div>
     <div class="alert alert-info mb-3" role="alert">
       <small>
-        <i class="fa fa-info-circle"></i>
+        <font-awesome-icon icon="fa fa-info-circle"/>
         <span>Insecure Secrets that are used when running in non-secure mode, i.e. when Vault isn't available. This is a dynamic map of configuration, so can empty if no secrets are used or can have as many or few user-defined secrets. It simulates a Secret Store in non-secure mode. </span>
       </small>
     </div>
     <div class="card mb-3">
       <div class="card-header">
-        <i class="fa fa-tags text-danger mr-2"></i>
+        <font-awesome-icon icon="fa fa-tags text-danger mr-2"/>
         <span class="font-weight-bold">DB</span>
       </div>
       <div class="card-body">
@@ -37,7 +37,7 @@
 
     <div class="card mb-3" >
       <div class="card-header">
-        <i class="fa fa-tags text-danger mr-2"></i>
+        <font-awesome-icon icon="fa fa-tags text-danger mr-2"/>
         <span class="font-weight-bold">mqtt</span>
       </div>
       <div class="card-body">
@@ -85,7 +85,7 @@
 
     <div class="card mb-3">
       <div class="card-header">
-        <i class="fa fa-tags text-danger mr-2"></i>
+        <font-awesome-icon icon="fa fa-tags text-danger mr-2"/>
         <span class="font-weight-bold">http</span>
       </div>
       <div class="card-body">
@@ -108,7 +108,7 @@
 
     <div class="card mb-3">
       <div class="card-header">
-        <i class="fa fa-tags text-danger mr-2"></i>
+        <font-awesome-icon icon="fa fa-tags text-danger mr-2"/>
         <span class="font-weight-bold">AES</span>
       </div>
       <div class="card-body">
