@@ -31,7 +31,6 @@
         </div>
         <div class="card-body">
           <div v-if="this.configurableSection === 'Trigger'">
-            <p> Trigger </p>
             <Trigger :TriggerData.sync="appSvcConfig.Trigger"/>
           </div>
         </div>
@@ -77,6 +76,7 @@ export default {
     },
     submit () {
       console.log(this.appSvcConfig.Trigger.EdgexMessageBus.Optional.KeepAlive)
+      console.log(this.appSvcConfig.Trigger.Type)
     }
   }
 }
