@@ -5,12 +5,22 @@ import routes from './router'
 import { store as commonStore } from 'common'
 import store from './store'
 import VueRouter from 'vue-router'
+
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faList, faTags, faCog } from '@fortawesome/free-solid-svg-icons'
+
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+
+library.add(faList)
+library.add(faTags)
+library.add(faCog)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 let instance = null

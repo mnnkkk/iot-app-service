@@ -1,12 +1,19 @@
 <template>
   <div class="card">
-    <h1>app-service-list</h1>
-    <svc-line
-      v-for="appSvc in appServiceList"
-      :ServiceId = appSvc.ServiceId
-      :Port = appSvc.Port
-      :key = appSvc.ServiceId
-    />
+    <div class="card-header">
+      <font-awesome-icon icon="fa-solid fa-list mr-2 text-danger" />
+      <span class="font-weight-bold">App Service List</span>
+    </div>
+    <div class="card-body">
+      <ul class="list-group p-0">
+        <svc-line
+          v-for="appSvc in appServiceList"
+          :ServiceId = appSvc.ServiceId
+          :Port = appSvc.Port
+          :key = appSvc.ServiceId
+        />
+      </ul>
+    </div>
   </div>
 </template>
 

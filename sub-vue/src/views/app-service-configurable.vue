@@ -1,39 +1,41 @@
 <template>
-  <div>
-    <div>
-      <p> {{ slug }} </p>
-      <p> Configurable Setting </p>
-      <button @click="submit()">
-        Submit
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-tags mr-2 text-danger"></i>
+      <span class="font-weight-bold">
+            <span class="mr-2 text-info"> {{ slug }} </span>
+            <span>Configurable Setting</span>
+         </span>
+      <button class="btn btn-success btn-sm float-right" @click="submit()">
+        <i class="fa fa-save mr-1"></i>
+        <span>Submit</span>
       </button>
     </div>
-    <div>
-      <li>
-        <a @click="setConfigurableSection('Trigger')"> Trigger </a>
-      </li>
-      <li>
-        <a @click="setConfigurableSection('PipelineFunc')"> PipelineFunc </a>
-      </li>
-      <li>
-        <a @click="setConfigurableSection('InsecureSecrets')"> InsecureSecrets </a>
-      </li>
-      <li>
-        <a @click="setConfigurableSection('StoreAndForward')"> StoreAndForward </a>
-      </li>
-    </div>
-    <div>
-      <div v-if="this.configurableSection === 'Trigger'">
-        <p> Trigger </p>
-        <Trigger :TriggerData.sync="appSvcConfig.Trigger"/>
-      </div>
-      <div v-if="this.configurableSection === 'PipelineFunc'">
-        <p> PipelineFunc </p>
-      </div>
-      <div v-if="this.configurableSection === 'InsecureSecrets'">
-        <p> InsecureSecrets </p>
-      </div>
-      <div v-if="this.configurableSection === 'StoreAndForward'">
-        <p> StoreAndForward </p>
+    <div class="card-body">
+
+      <div class="card">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs font-weight-bold">
+            <li class="nav-item" @click="setConfigurableSection('Trigger')">
+              <a class="nav-link" role="button">Trigger</a>
+            </li>
+            <li class="nav-item" @click="setConfigurableSection('PipelineFunc')">
+              <a class="nav-link" role="button">Pipeline Functions</a>
+            </li>
+            <li class="nav-item" @click="setConfigurableSection('InsecureSecrets')">
+              <a class="nav-link" role="button">Insecure Secrets</a>
+            </li>
+            <li class="nav-item" @click="setConfigurableSection('StoreAndForward')">
+              <a class="nav-link" role="button">Store And Forward</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div v-if="this.configurableSection === 'Trigger'">
+            <p> Trigger </p>
+            <Trigger :TriggerData.sync="appSvcConfig.Trigger"/>
+          </div>
+        </div>
       </div>
     </div>
   </div>
