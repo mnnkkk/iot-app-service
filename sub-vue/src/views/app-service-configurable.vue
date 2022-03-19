@@ -36,6 +36,9 @@
           <div v-if="this.configurableSection === 'InsecureSecrets'">
             <InsecureSecrets :InsecureSecretsData.sync="appSvcConfig.Writable.InsecureSecrets"/>
           </div>
+          <div v-if="this.configurableSection === 'StoreAndForward'">
+            <StoreAndForward :StoreAndForwardData.sync="appSvcConfig.Writable.StoreAndForward"/>
+          </div>
         </div>
       </div>
     </div>
@@ -46,12 +49,14 @@
 import { appServiceService } from '../common/api.service'
 import Trigger from '../components/Trigger'
 import InsecureSecrets from '../components/InsecureSecrets'
+import StoreAndForward from '../components/StoreAndForward'
 
 export default {
   name: 'app-service-configurable',
   components: {
     Trigger,
-    InsecureSecrets
+    InsecureSecrets,
+    StoreAndForward
   },
   props: {
     slug: {
@@ -83,6 +88,7 @@ export default {
       console.log(this.appSvcConfig.Trigger.EdgexMessageBus.Optional.KeepAlive)
       console.log(this.appSvcConfig.Trigger.Type)
       console.log(this.appSvcConfig.Writable.InsecureSecrets.AES.Path)
+      console.log(this.appSvcConfig.Writable.StoreAndForward.Enabled)
     }
   }
 }
