@@ -1,32 +1,31 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <i class="fa fa-tags mr-2 text-danger"></i>
+      <font-awesome-icon icon="fa fa-tags mr-2 text-danger" />
       <span class="font-weight-bold">
             <span class="mr-2 text-info"> {{ slug }} </span>
             <span>Configurable Setting</span>
          </span>
       <button class="btn btn-success btn-sm float-right" @click="submit()">
-        <i class="fa fa-save mr-1"></i>
-        <span>Submit</span>
+        <font-awesome-icon icon="fa fa-save mr-1" />
+        <span> Submit</span>
       </button>
     </div>
     <div class="card-body">
-
       <div class="card">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs font-weight-bold">
             <li class="nav-item" @click="setConfigurableSection('Trigger')">
-              <a class="nav-link" role="button">Trigger</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Trigger'}" role="button">Trigger</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('PipelineFunc')">
-              <a class="nav-link" role="button">Pipeline Functions</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'PipelineFunc'}" role="button">Pipeline Functions</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('InsecureSecrets')">
-              <a class="nav-link" role="button">Insecure Secrets</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'InsecureSecrets'}" role="button">Insecure Secrets</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('StoreAndForward')">
-              <a class="nav-link" role="button">Store And Forward</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'StoreAndForward'}" role="button">Store And Forward</a>
             </li>
           </ul>
         </div>
@@ -69,6 +68,7 @@ export default {
 
   },
   mounted () {
+    this.configurableSection = 'Trigger'
     this.appSvcConfig = appServiceService.getAppSvcConfigBySvcKey(this.slug)
   },
   methods: {

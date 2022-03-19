@@ -12,7 +12,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faList, faTags, faCog } from '@fortawesome/free-solid-svg-icons'
+import { faList, faTags, faCog, faSave } from '@fortawesome/free-solid-svg-icons'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
@@ -20,6 +20,7 @@ Vue.use(IconsPlugin)
 library.add(faList)
 library.add(faTags)
 library.add(faCog)
+library.add(faSave)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
