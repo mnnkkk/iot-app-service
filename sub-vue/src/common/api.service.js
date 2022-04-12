@@ -48,7 +48,13 @@ export const svcService = {
 }
 
 export const appServiceService = {
-  getAppSvcConfigBySvcKey (svcKey) {
-    return MockAppSvcConfig
+  async getAppSvcConfigBySvcKey (svcKey) {
+    if (!IS_ONLINE) {
+      return MockAppSvcConfig
+    }
+    const res = await ApiService.get('v2/appsvc/config/servicekey', svcKey)
+    console.log('res')
+    console.log(res)
+    return res.data
   }
 }

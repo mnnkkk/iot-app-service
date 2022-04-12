@@ -76,9 +76,9 @@ export default {
   watch: {
 
   },
-  mounted () {
+  async mounted () {
     this.configurableSection = 'Trigger'
-    this.appSvcConfig = appServiceService.getAppSvcConfigBySvcKey(this.slug)
+    this.appSvcConfig = await appServiceService.getAppSvcConfigBySvcKey(this.slug)
   },
   methods: {
     setConfigurableSection (configSection) {
