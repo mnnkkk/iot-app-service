@@ -44,8 +44,8 @@ export default {
     this.getAllAppSvc()
   },
   methods: {
-    getAllAppSvc () {
-      const serviceList = svcService.get()
+    async getAllAppSvc () {
+      const serviceList = await svcService.get()
       for (const svc of serviceList) {
         console.log(svc)
         if (svc.ServiceId.startsWith('app-')) {

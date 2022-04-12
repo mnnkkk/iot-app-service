@@ -14,6 +14,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faList, faTag, faTags, faCog, faSave, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
+import ApiService from './common/api.service'
+
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
@@ -24,6 +26,8 @@ library.add(faCog)
 library.add(faSave)
 library.add(faInfoCircle)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+ApiService.init()
 
 Vue.config.productionTip = false
 let instance = null
