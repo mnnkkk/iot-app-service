@@ -112,7 +112,7 @@ export const MockAppSvcConfig = {
     },
     LogLevel: 'INFO',
     Pipeline: {
-      ExecutionOrder: 'FilterByProfileName, FilterByDeviceName, FilterByResourceName, TransformXml, SetResponseData',
+      ExecutionOrder: 'FilterByProfileName,FilterByDeviceName,FilterByResourceName,TransformXml,SetResponseData',
       Functions: {
         AddTags: { Parameters: { Tags: '' } },
         Batch: { Parameters: { BatchThreshold: '30', Mode: 'bytimecount', TimeInterval: '60s' } },
