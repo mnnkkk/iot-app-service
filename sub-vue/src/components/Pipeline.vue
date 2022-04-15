@@ -61,6 +61,31 @@
         </div>
       </div>
     </div>
+
+    <div v-for="(func, funcName) in this.Pipeline.Functions" :key="func">
+      <div class="card mb-3">
+        <div class="card-header">
+          <font-awesome-icon icon="fa fa-tags text-danger mr-2"/>
+          <span class="font-weight-bold">{{ funcName }}</span>
+        </div>
+        <div class="card-body">
+          <form>
+
+            <div class="form-group row" v-for="(val, param) in func.Parameters" :key="param">
+              <label class="col-sm-2 col-form-label">
+                <span>{{ param }}</span>
+                <span class="fa fa-question-circle-o fa-lg ml-2" role="button"></span>
+              </label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" v-model="Pipeline.Functions[funcName].Parameters[param]">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
