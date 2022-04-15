@@ -10,12 +10,6 @@ const ApiService = {
     Vue.axios.defaults.baseURL = API_URL
   },
 
-  setHeader () {
-  },
-
-  query (resource, params) {
-  },
-
   get (resource, slug = '') {
     return Vue.axios.get(`${resource}/${slug}`).catch(error => {
       throw new Error(`[RWV] ApiService ${error}`)
@@ -23,15 +17,7 @@ const ApiService = {
   },
 
   post (resource, params) {
-  },
-
-  update (resource, slug, params) {
-  },
-
-  put (resource, params) {
-  },
-
-  delete (resource) {
+    return Vue.axios.post(`${resource}`, params)
   }
 }
 
@@ -53,8 +39,13 @@ export const appServiceService = {
       return MockAppSvcConfig
     }
     const res = await ApiService.get('v2/appsvc/config/servicekey', svcKey)
-    console.log('res')
-    console.log(res)
     return res.data
+  },
+  async postAppSvcConfigBySvcKey (slug, payload) {
+    if (!IS_ONLINE) {
+      return true
+    }
+    const res = await ApiService.post(`v2/appsvc/deploy/servicekey/${slug}`, payload)
+    return res.status === 200
   }
 }

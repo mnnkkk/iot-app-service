@@ -89,13 +89,24 @@ export default {
     setConfigurableSection (configSection) {
       this.configurableSection = configSection
     },
-    submit () {
-      console.log(this.appSvcConfig.Trigger.EdgexMessageBus.Optional.KeepAlive)
-      console.log(this.appSvcConfig.Trigger.Type)
-      console.log(this.appSvcConfig.Writable.InsecureSecrets.AES.Path)
-      console.log(this.appSvcConfig.Writable.StoreAndForward.Enabled)
-      console.log(this.appSvcConfig.Writable.Pipeline.ExecutionOrder)
-      console.log(this.appSvcConfig.Writable.Pipeline)
+    async submit () {
+      // console.log('Submit: ' + this.appSvcConfig.Trigger.EdgexMessageBus.Optional.KeepAlive)
+      // console.log('Submit: ' + this.appSvcConfig.Trigger.Type)
+      // console.log('Submit: ' + this.appSvcConfig.Writable.InsecureSecrets.AES.Path)
+      // console.log('Submit: ' + this.appSvcConfig.Writable.StoreAndForward.Enabled)
+      // console.log('Submit: ' + this.appSvcConfig.Writable.Pipeline.ExecutionOrder)
+
+      const writable = {
+        Pipeline: {
+          ExecutionOrder: this.appSvcConfig.Writable.Pipeline.ExecutionOrder,
+          Functions: this.appSvcConfig.Writable.Pipeline.Functions
+        },
+        InsecureSecrets: this.appSvcConfig.Writable.InsecureSecrets,
+        StoreAndForward: this.appSvcConfig.Writable.StoreAndForward
+      }
+
+      const isSuccess = await appServiceService.postAppSvcConfigBySvcKey(this.slug, { Writable: writable })
+      console.log(isSuccess)
     }
   }
 }
