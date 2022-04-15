@@ -1,28 +1,67 @@
 <template>
   <div>
-    <div class="mt-5 container">
-      <div class="row justify-content-center border py-5">
-        <div class="col-5">
-          <h4 class="mb-3">容器 A</h4>
-          <draggable class="draggable-list" :list="unSelectedFunc" group="my-group" @add="drag" @sort="drag">
-            <div class="list-item" v-for="element in unSelectedFunc" :key="element.name">
-              {{ element.name }}
-            </div>
-          </draggable>
+    <div class="row">
+      <div class="col-sm-4 col-md-3">
+        <div class="card mb-3" >
+          <div class="card-header font-weight-bold text-nowrap text-truncate">
+            <i class="fa fa-file-text mr-2 text-danger"></i>
+            <span i18n>Builtin Pipeline Functions</span>
+          </div>
+          <div class="card-body overflow-auto">
+            <table v-if="unSelectedFunc.length === 0" class="border-secondary rounded w-100 text-center" style="height: 70px; border: 1px; border-style: dashed;">
+              <tbody>
+              <td class="text-muted" i18n>Drop Zone</td>
+              </tbody>
+            </table>
+            <draggable class="draggable-list" :list="unSelectedFunc" group="my-group" @add="drag" @sort="drag">
+              <div class="list-item" v-for="element in unSelectedFunc" :key="element.name">
+                <span class="badge badge-secondary" role="button">
+                  {{ element.name }}
+                </span>
+              </div>
+            </draggable>
+          </div>
         </div>
+      </div>
 
-        <div class="col-5">
-          <h4 class="mb-3">容器 B</h4>
-          <draggable class="draggable-list" :list="selectedFunc" group="my-group" @add="drag" @sort="drag">
-            <div class="list-item" v-for="element in selectedFunc" :key="element.name">
-              {{ element.name }}
+      <div class="col-sm-8 col-md-9">
+        <div class="card">
+          <div class="card-header font-weight-bold">
+            <i class="fa fa-file-text mr-2 text-danger"></i>
+            <span i18n>Selected Pipeline Functions</span>
+          </div>
+          <div class="card-body">
+            <div class="card mb-3">
+              <div class="card-header font-weight-bold text-nowrap text-truncate">
+                <i class="fa fa-sort-amount-asc fa-rotate-270 mr-2 text-danger"></i>
+                <span i18n>Func Execution Order</span>
+                <span class="text-info ml-2">
+                            <small>
+                                <i class="fa fa-info-circle mr-1"></i>
+                                <span i18n>drag sorting is enabled</span>
+                            </small>
+                        </span>
+              </div>
+              <div class="card-body" id="funcExecOrderSelectedBody">
+                <table v-if="selectedFunc.length === 0" class="border-secondary rounded w-100 text-center" style="height: 70px; border: 1px; border-style: dashed;">
+                  <tbody>
+                  <td class="text-muted" i18n>Drop Zone</td>
+                  </tbody>
+                </table>
+                <draggable class="draggable-list" :list="selectedFunc" group="my-group" @add="drag" @sort="drag">
+                  <div class="list-item" v-for="element in selectedFunc" :key="element.name">
+                <span class="badge badge-secondary" role="button">
+                  {{ element.name }}
+                </span>
+                  </div>
+                </draggable>
+              </div>
             </div>
-          </draggable>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -74,7 +113,6 @@ export default {
   },
   methods: {
     drag () {
-      console.log('add')
       const funNames = []
       for (const func of this.selectedFunc) {
         funNames.push(func.name)
