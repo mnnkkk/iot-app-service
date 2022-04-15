@@ -18,8 +18,8 @@
             <li class="nav-item" @click="setConfigurableSection('Trigger')">
               <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Trigger'}" role="button">Trigger</a>
             </li>
-            <li class="nav-item" @click="setConfigurableSection('PipelineFunc')">
-              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'PipelineFunc'}" role="button">Pipeline Functions</a>
+            <li class="nav-item" @click="setConfigurableSection('Pipeline')">
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Pipeline'}" role="button">Pipeline Functions</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('InsecureSecrets')">
               <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'InsecureSecrets'}" role="button">Insecure Secrets</a>
@@ -32,6 +32,9 @@
         <div class="card-body">
           <div v-if="this.configurableSection === 'Trigger'">
             <Trigger :TriggerData.sync="appSvcConfig.Trigger"/>
+          </div>
+          <div v-if="this.configurableSection === 'Pipeline'">
+            <Pipeline :PipelineData.sync="appSvcConfig.Writable.Pipeline"/>
           </div>
           <div v-if="this.configurableSection === 'InsecureSecrets'">
             <InsecureSecrets :InsecureSecretsData.sync="appSvcConfig.Writable.InsecureSecrets"/>
@@ -50,13 +53,15 @@ import { appServiceService } from '../common/api.service'
 import Trigger from '../components/Trigger'
 import InsecureSecrets from '../components/InsecureSecrets'
 import StoreAndForward from '../components/StoreAndForward'
+import Pipeline from '../components/Pipeline'
 
 export default {
   name: 'app-service-configurable',
   components: {
     Trigger,
     InsecureSecrets,
-    StoreAndForward
+    StoreAndForward,
+    Pipeline
   },
   props: {
     slug: {
@@ -89,6 +94,7 @@ export default {
       console.log(this.appSvcConfig.Trigger.Type)
       console.log(this.appSvcConfig.Writable.InsecureSecrets.AES.Path)
       console.log(this.appSvcConfig.Writable.StoreAndForward.Enabled)
+      console.log(this.appSvcConfig.Writable.Pipeline.ExecutionOrder)
     }
   }
 }
