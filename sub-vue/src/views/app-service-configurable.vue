@@ -95,6 +95,7 @@ export default {
       console.log(this.appSvcConfig.Writable.InsecureSecrets.AES.Path)
       console.log(this.appSvcConfig.Writable.StoreAndForward.Enabled)
       console.log(this.appSvcConfig.Writable.Pipeline.ExecutionOrder)
+      console.log(this.appSvcConfig.Writable.Pipeline)
     }
   }
 }
