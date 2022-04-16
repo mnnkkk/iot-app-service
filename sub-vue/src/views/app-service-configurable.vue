@@ -105,17 +105,17 @@ export default {
         StoreAndForward: this.appSvcConfig.Writable.StoreAndForward
       }
 
-      const isSuccess = await appServiceService.postAppSvcConfigBySvcKey(this.slug, { Writable: writable })
-      console.log(isSuccess)
-      if (!isSuccess) {
+      const status = await appServiceService.postAppSvcConfigBySvcKey(this.slug, { Writable: writable })
+      console.log(status)
+      if (status === 200) {
         this.makeToast('success', 'Success', '200 OK')
       } else {
-        this.makeToast('danger', 'Fail', 'Http failure')
+        this.makeToast('danger', 'Fail', `${status} Fail`)
       }
     },
-    makeToast (variant = null, status, content) {
+    makeToast (variant = null, title, content) {
       this.$bvToast.toast(content, {
-        title: `Submit ${status}`,
+        title: `Submit ${title}`,
         variant: variant,
         solid: true
       })

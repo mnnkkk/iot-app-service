@@ -43,9 +43,9 @@ export const appServiceService = {
   },
   async postAppSvcConfigBySvcKey (slug, payload) {
     if (!IS_ONLINE) {
-      return true
+      return 200
     }
     const res = await ApiService.post(`v2/appsvc/deploy/servicekey/${slug}`, payload)
-    return res.status === 200
+    return res.status
   }
 }
