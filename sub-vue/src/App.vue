@@ -17,14 +17,15 @@
 <!--      <button @click="changeUsername">改变全局的用户名称</button>-->
 <!--    </div>-->
 
-    <select v-model="locale">
-      <option
-        v-for="(locale, index) in locales"
-        :key="index"
-        :value="locale.value"
-      >{{ locale.label }}</option>
-    </select>
-    <h1>{{ $t('message') }}</h1>
+    <div class="card-body overflow-auto">
+      <select v-model="locale" class="btn btn-secondary btn-sm dropdown-toggle ">
+        <option
+          v-for="(locale, index) in locales"
+          :key="index"
+          :value="locale.value"
+        >{{ locale.label }}</option>
+      </select>
+    </div>
 
     <router-view/>
   </div>
