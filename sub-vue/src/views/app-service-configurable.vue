@@ -107,6 +107,18 @@ export default {
 
       const isSuccess = await appServiceService.postAppSvcConfigBySvcKey(this.slug, { Writable: writable })
       console.log(isSuccess)
+      if (!isSuccess) {
+        this.makeToast('success', 'Success', '200 OK')
+      } else {
+        this.makeToast('danger', 'Fail', 'Http failure')
+      }
+    },
+    makeToast (variant = null, status, content) {
+      this.$bvToast.toast(content, {
+        title: `Submit ${status}`,
+        variant: variant,
+        solid: true
+      })
     }
   }
 }
