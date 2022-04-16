@@ -3,7 +3,7 @@
     <div class="alert alert-info mb-3" role="alert">
       <small>
         <font-awesome-icon icon="fa fa-info-circle"/>
-        <span>Insecure Secrets that are used when running in non-secure mode, i.e. when Vault isn't available. This is a dynamic map of configuration, so can empty if no secrets are used or can have as many or few user-defined secrets. It simulates a Secret Store in non-secure mode. </span>
+        <span>{{ $t('Insecure Secrets Alert') }}</span>
       </small>
     </div>
     <div class="card mb-3">

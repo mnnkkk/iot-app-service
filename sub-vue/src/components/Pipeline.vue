@@ -5,12 +5,12 @@
         <div class="card mb-3" >
           <div class="card-header font-weight-bold text-nowrap text-truncate">
             <i class="fa fa-file-text mr-2 text-danger"></i>
-            <span i18n>Builtin Pipeline Functions</span>
+            <span>{{ $t('Builtin Pipeline Functions') }}</span>
           </div>
           <div class="card-body overflow-auto">
             <table v-if="unSelectedFunc.length === 0" class="border-secondary rounded w-100 text-center" style="height: 70px; border: 1px; border-style: dashed;">
               <tbody>
-              <td class="text-muted" i18n>Drop Zone</td>
+              <td class="text-muted">{{ $t('Drop Zone') }}</td>
               </tbody>
             </table>
             <draggable class="draggable-list" :list="unSelectedFunc" group="my-group" @add="drag" @sort="drag">
@@ -28,24 +28,24 @@
         <div class="card">
           <div class="card-header font-weight-bold">
             <i class="fa fa-file-text mr-2 text-danger"></i>
-            <span i18n>Selected Pipeline Functions</span>
+            <span>{{ $t('Selected Pipeline Functions') }}</span>
           </div>
           <div class="card-body">
             <div class="card mb-3">
               <div class="card-header font-weight-bold text-nowrap text-truncate">
                 <i class="fa fa-sort-amount-asc fa-rotate-270 mr-2 text-danger"></i>
-                <span i18n>Func Execution Order</span>
+                <span>{{ $t('Func Execution Order') }}</span>
                 <span class="text-info ml-2">
                             <small>
                                 <i class="fa fa-info-circle mr-1"></i>
-                                <span i18n>drag sorting is enabled</span>
+                                <span>{{ $t('drag sorting is enabled') }}</span>
                             </small>
                         </span>
               </div>
               <div class="card-body" id="funcExecOrderSelectedBody">
                 <table v-if="selectedFunc.length === 0" class="border-secondary rounded w-100 text-center" style="height: 70px; border: 1px; border-style: dashed;">
                   <tbody>
-                  <td class="text-muted" i18n>Drop Zone</td>
+                  <td class="text-muted">{{ $t('Drop Zone') }}</td>
                   </tbody>
                 </table>
                 <draggable class="draggable-list" :list="selectedFunc" group="my-group" @add="drag" @sort="drag">

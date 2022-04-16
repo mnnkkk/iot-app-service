@@ -11,5 +11,12 @@
   "EdgexMessageBus Trigger": "EdgexMessageBus Trigger",
   "Subscribe Host": "Subscribe Host",
   "Publish Host": "Publish Host",
-  "Optional": "Optional"
+  "Optional": "Optional",
+  "Builtin Pipeline Functions": "Builtin Pipeline Functions",
+  "Selected Pipeline Functions": "Selected Pipeline Functions",
+  "Func Execution Order": "Func Execution Order",
+  "Pipeline Functions Parameter Setting": "Pipeline Functions Parameter Setting",
+  "drag sorting is enabled": "drag sorting is enabled",
+  "Drop Zone": "Drop Zone",
+  "Insecure Secrets Alert": "Insecure Secrets that are used when running in non-secure mode, i.e. when Vault isn't available. This is a dynamic map of configuration, so can empty if no secrets are used or can have as many or few user-defined secrets. It simulates a Secret Store in non-secure mode. "
 }

@@ -11,5 +11,12 @@
   "EdgexMessageBus Trigger": "Edgex消息总线触发器",
   "Subscribe Host": "订阅主机信息",
   "Publish Host": "发布主机信息",
-  "Optional": "配置选项"
+  "Optional": "配置选项",
+  "Builtin Pipeline Functions": "内置管道函数",
+  "Selected Pipeline Functions": "选中的管道函数",
+  "Func Execution Order": "管道函数执行顺序",
+  "Pipeline Functions Parameter Setting": "管道函数参数设置",
+  "drag sorting is enabled": "拖拽改变执行顺序",
+  "Drop Zone": "拖拽区域",
+  "Insecure Secrets Alert": "非安全模式秘钥存储用于非安全模式启动EdgeX，比如非安全模式下没有Vault存储系统，仅仅用于在非安全模式下替代Vault"
 }
