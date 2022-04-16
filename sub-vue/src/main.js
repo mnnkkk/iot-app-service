@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faList, faTag, faTags, faCog, faSave, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
 
 import ApiService from './common/api.service'
+import i18n from './i18n'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
@@ -43,6 +44,7 @@ function render (props = {}) {
   instance = new Vue({
     router,
     store,
+    i18n,
     render: (h) => h(App)
   }).$mount(container ? container.querySelector('#app') : '#app')
 }

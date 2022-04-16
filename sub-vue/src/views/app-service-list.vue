@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">
       <font-awesome-icon icon="fa-solid fa-list mr-2 text-danger" />
-      <span class="font-weight-bold">App Service List</span>
+      <span class="font-weight-bold">{{ $t('App Service List') }}</span>
     </div>
     <div class="card-body">
       <ul class="list-group p-0">

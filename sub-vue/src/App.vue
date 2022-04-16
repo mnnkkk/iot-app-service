@@ -5,17 +5,27 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/app-service-list">app-service-list</router-link>
     </div>
-    <div>
-      <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行'}}</code>环境</p>
-      <p>vuex的`global module`的user state：<code> {{ JSON.stringify(user) }}</code></p>
-    </div>
-    <div class="btns">
-      <template v-if="isInQiankun">
-        <button @click="gotoSubReact">从当前子应用内跳转到`sub-react`子应用</button>
-        <button @click="openSubVue">独立打开sub-vue子应用</button>
-      </template>
-      <button @click="changeUsername">改变全局的用户名称</button>
-    </div>
+<!--    <div>-->
+<!--      <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行'}}</code>环境</p>-->
+<!--      <p>vuex的`global module`的user state：<code> {{ JSON.stringify(user) }}</code></p>-->
+<!--    </div>-->
+<!--    <div class="btns">-->
+<!--      <template v-if="isInQiankun">-->
+<!--        <button @click="gotoSubReact">从当前子应用内跳转到`sub-react`子应用</button>-->
+<!--        <button @click="openSubVue">独立打开sub-vue子应用</button>-->
+<!--      </template>-->
+<!--      <button @click="changeUsername">改变全局的用户名称</button>-->
+<!--    </div>-->
+
+    <select v-model="locale">
+      <option
+        v-for="(locale, index) in locales"
+        :key="index"
+        :value="locale.value"
+      >{{ locale.label }}</option>
+    </select>
+    <h1>{{ $t('message') }}</h1>
+
     <router-view/>
   </div>
 </template>
@@ -23,6 +33,26 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
+  data () {
+    return {
+      locale: this.$i18n.locale,
+      locales: [
+        {
+          value: 'en',
+          label: 'English'
+        },
+        {
+          value: 'zh-CN',
+          label: '中文简体'
+        }
+      ]
+    }
+  },
+  watch: {
+    locale (val) {
+      this.$i18n.locale = val
+    }
+  },
   computed: {
     // 通过global获取user的信息
     ...mapState('global', {

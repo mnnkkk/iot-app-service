@@ -4,11 +4,11 @@
       <font-awesome-icon icon="fa fa-tags mr-2 text-danger" />
       <span class="font-weight-bold">
             <span class="mr-2 text-info"> {{ slug }} </span>
-            <span>Configurable Setting</span>
+            <span> {{ $t('Configurable Setting') }}</span>
          </span>
       <button class="btn btn-success btn-sm float-right" @click="submit()">
         <font-awesome-icon icon="fa fa-save mr-1" />
-        <span> Submit</span>
+        <span> {{ $t('Submit') }}</span>
       </button>
     </div>
     <div class="card-body">
@@ -16,16 +16,16 @@
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs font-weight-bold">
             <li class="nav-item" @click="setConfigurableSection('Trigger')">
-              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Trigger'}" role="button">Trigger</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Trigger'}" role="button">{{ $t('Trigger') }}</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('Pipeline')">
-              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Pipeline'}" role="button">Pipeline Functions</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'Pipeline'}" role="button">{{ $t('Pipeline Functions') }}</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('InsecureSecrets')">
-              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'InsecureSecrets'}" role="button">Insecure Secrets</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'InsecureSecrets'}" role="button">{{ $t('Insecure Secrets') }}</a>
             </li>
             <li class="nav-item" @click="setConfigurableSection('StoreAndForward')">
-              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'StoreAndForward'}" role="button">Store And Forward</a>
+              <a v-bind:class="{'nav-link': true, active: this.configurableSection === 'StoreAndForward'}" role="button">{{ $t('Store And Forward') }}</a>
             </li>
           </ul>
         </div>

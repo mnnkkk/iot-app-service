@@ -1,0 +1,15 @@
+{
+  "message": "你好",
+  "App Service List": "应用服务列表",
+  "Configurable": "配置",
+  "Configurable Setting": "配置设置",
+  "Submit": "提交",
+  "Trigger": "触发器",
+  "Pipeline Functions": "管道函数",
+  "Insecure Secrets": "非安全秘钥存储",
+  "Store And Forward": "缓存和转发",
+  "EdgexMessageBus Trigger": "Edgex消息总线触发器",
+  "Subscribe Host": "订阅主机信息",
+  "Publish Host": "发布主机信息",
+  "Optional": "配置选项"
+}

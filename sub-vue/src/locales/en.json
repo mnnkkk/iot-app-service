@@ -1,0 +1,15 @@
+{
+  "message": "hello",
+  "App Service List": "App Service List",
+  "Configurable": "Configurable",
+  "Configurable Setting": "Configurable Setting",
+  "Submit": "Submit",
+  "Trigger": "Trigger",
+  "Pipeline Functions": "Pipeline Functions",
+  "Insecure Secrets": "Insecure Secrets",
+  "Store And Forward": "Store And Forward",
+  "EdgexMessageBus Trigger": "EdgexMessageBus Trigger",
+  "Subscribe Host": "Subscribe Host",
+  "Publish Host": "Publish Host",
+  "Optional": "Optional"
+}

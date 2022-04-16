@@ -1,15 +1,5 @@
 <template>
   <div>
-    <div class="alert alert-info mb-3" role="alert">
-      <small>
-        <font-awesome-icon icon="fa fa-info-circle mr-1"/>
-        <span>
-                App service needs to restart when Trigger is changed, so this section only lets user to know what Trigger the app service used right now! <br>
-                And Next, UI will support user to change the Trigger section.
-            </span>
-      </small>
-    </div>
-
     <form>
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">
@@ -30,7 +20,7 @@
     <div v-if="Trigger.Type === 'edgex-messagebus'" class="card mb-3">
       <div class="card-header">
         <font-awesome-icon icons="fa fa-tags mr-2 text-danger"/>
-        <span class="font-weight-bold">EdgexMessageBus Trigger</span>
+        <span class="font-weight-bold">{{ $t('EdgexMessageBus Trigger') }}</span>
       </div>
       <div class="card-body">
         <form>
@@ -53,7 +43,7 @@
             <div class="card mb-3">
               <div class="card-header font-weight-bold">
                 <font-awesome-icon icon="fa fa-tag mr-2 text-danger"/>
-                <span>Subscribe Host</span>
+                <span>{{ $t('Subscribe Host') }}</span>
               </div>
               <div class="card-body">
                 <form>
@@ -89,7 +79,7 @@
             <div class="card mb-3">
               <div class="card-header font-weight-bold">
                 <font-awesome-icon icons="fa fa-tag mr-2 text-danger"/>
-                <span>Publish Host</span>
+                <span>{{ $t('Publish Host') }}</span>
               </div>
               <div class="card-body">
                 <form>
@@ -127,7 +117,7 @@
             <div class="card">
               <div class="card-header font-weight-bold">
                 <font-awesome-icon icon="fa fa-tag mr-2 text-danger"/>
-                <span>Optional</span>
+                <span>{{ $t('Optional') }}</span>
               </div>
               <div class="card-body">
                 <form>

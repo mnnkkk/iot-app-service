@@ -14,7 +14,7 @@
           <span class="badge badge-info mr-3" role="button" >port {{ Port }}</span>
           <router-link class="badge badge-secondary float-right" role="button" :to='appSvcLink'>
             <font-awesome-icon icon="fa fa-cog mr-1" />
-            <span>Configurable</span>
+            <span>{{ $t('Configurable') }}</span>
           </router-link>
         </div>
       </div>
