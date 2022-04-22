@@ -1,4 +1,4 @@
-# sub-vue
+# app-service
 
 ## Project setup
 
