@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/app-service/app-service-list'
   },
   {
-    path: '/about',
+    path: '/app-service',
+    redirect: '/app-service/app-service-list'
+  },
+  {
+    path: '/app-service/about',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -19,7 +21,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/app-service-list',
+    path: '/app-service/app-service-list',
     name: 'app-service-list',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -27,7 +29,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/app-service-list')
   },
   {
-    path: '/app-service-configurable/:slug',
+    path: '/app-service/app-service-configurable/:slug',
     name: 'app-service-configurable',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

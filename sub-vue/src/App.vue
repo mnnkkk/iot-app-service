@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/app-service-list">app-service-list</router-link>
-    </div>
+<!--    <div id="nav">-->
+<!--      <router-link to="/app-service/about">About</router-link> |-->
+<!--      <router-link to="/app-service/app-service-list">app-service-list</router-link>-->
+<!--    </div>-->
+
 <!--    <div>-->
 <!--      <p>当前处于<code>{{ isInQiankun ? 'qiankun' : '独立运行'}}</code>环境</p>-->
 <!--      <p>vuex的`global module`的user state：<code> {{ JSON.stringify(user) }}</code></p>-->
