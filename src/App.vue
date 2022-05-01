@@ -23,6 +23,7 @@
           v-for="(locale, index) in locales"
           :key="index"
           :value="locale.value"
+          @click="switchLanguage(locale.value)"
         >{{ locale.label }}</option>
       </select>
     </div>
@@ -74,6 +75,11 @@ export default {
       this.setGlobalState({
         user: { name: '李四' + Math.round(Math.random() * 100) }
       })
+    },
+    switchLanguage (selectedLanguage) {
+      // console.log('Call Func switchLanguage ' + selectedLanguage)
+      this.$store.commit('switchLanguage', selectedLanguage)
+      // console.log('this.$store.state.language: ' + this.$store.state.language)
     },
     openSubVue () {
       if (!this.isInQiankun) {
