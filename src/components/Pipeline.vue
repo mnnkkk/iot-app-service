@@ -8,11 +8,6 @@
             <span>{{ $t('Builtin Pipeline Functions') }}</span>
           </div>
           <div class="card-body overflow-auto">
-            <table v-if="unSelectedFunc.length === 0" class="border-secondary rounded w-100 text-center" style="height: 70px; border: 1px; border-style: dashed;">
-              <tbody>
-              <td class="text-muted">{{ $t('Drop Zone') }}</td>
-              </tbody>
-            </table>
             <draggable class="draggable-list" :list="unSelectedFunc" group="my-group" @add="drag" @sort="drag">
               <div class="list-item" v-for="element in unSelectedFunc" :key="element.name">
                 <span class="badge badge-secondary" role="button">
@@ -43,11 +38,6 @@
                         </span>
               </div>
               <div class="card-body" id="funcExecOrderSelectedBody">
-                <table v-if="selectedFunc.length === 0" class="border-secondary rounded w-100 text-center" style="height: 70px; border: 1px; border-style: dashed;">
-                  <tbody>
-                  <td class="text-muted">{{ $t('Drop Zone') }}</td>
-                  </tbody>
-                </table>
                 <draggable class="draggable-list" :list="selectedFunc" group="my-group" @add="drag" @sort="drag">
                   <div class="list-item" v-for="element in selectedFunc" :key="element.name">
                 <span class="badge badge-secondary" role="button">
