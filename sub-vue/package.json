@@ -16,7 +16,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "axios": "^0.26.1",
     "bootstrap-vue": "^2.21.2",
-    "common": "file:../common",
+    "common": "file:./common",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-axios": "^3.4.1",
